@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+        </style>
+    <link rel="stylesheet" href="css/objectDetect.css">
+    <title>Object Detection | OpeniA</title>
+</head>
+<body>
+  
+
+    <header>
+      <a href="index.html" class="logo">Open<span>Ai</span></a>
+
+      <nav>   
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+          </ul>
+      </nav>
+  </header>
+
+  <section class="hero">
+      <h1>Object Detection</h1>
+      <p class="subhead">Detect object using best models.</p>    
+  </section>
+
+  <div class="container">
+        <h3>Demo</h3>
+        <p>Coco-ssd from Tensorflow to detect objects.</p>
+        <a href="https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a"  target="_blank">Classes that it has been trained.</a>
+
+        <div class="demo">
+            <div class="demo-cat">
+                <img id="cat-img"  width="400" height="400"  src="images/imageClassDemo/cat.jpeg" alt="image1">
+                <p id="cat"> <b>Loading...</b>  </p>
+            </div>
+
+            <div class="demo-dog">
+                <img id="dog-img"  width="400" height="400"  src="images/imageClassDemo/dog.webp" alt="image1">
+                <p id="dog"><b> Loading... </b> </p>
+            </div>
+
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"> </script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"> </script>
+<script>
+  // Notice there is no 'import' statement. 'cocoSsd' and 'tf' is
+  // available on the index-page because of the script tag above.
+
+  const img = document.getElementById('cat-img');
+
+  // Load the model.
+  cocoSsd.load().then(model => {
+    // detect objects in the image.
+
+    model.detect(img).then(predictions => {
+      console.log('Predictions: ', predictions);
+    });
+  });
+</script>
+
+
+
+
+</body>
+</html>

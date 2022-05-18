@@ -1,0 +1,224 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    font-family: 'Nunito';
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+    height: 80px;
+    width: 100%;
+    z-index: 99999;
+}
+
+.logo{
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.logo span{
+    animation: animSpan 2s  alternate-reverse infinite;
+}
+
+nav ul li{
+    display: inline-block;
+    padding: 0px 20px;
+
+}
+nav ul li a{
+    color: white;
+    font-size: 14px;
+    opacity: 1;
+    text-transform: uppercase;
+    transition: 0.5s ease-in-out ;
+}
+nav ul li a:hover{
+    color: rgb(93, 93, 239);
+   
+}
+
+.hero-img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    z-index: -1;
+    height: 90vh;
+    background-image:  url('../images/hand.webp');
+    background-size: cover;
+    animation: introLoad 2s forwards;
+}
+
+section{
+
+    color: black;
+    width: 50%;
+    height: 80vh;
+    padding: 0px 5%;
+}
+
+h1{
+    font-size: 3rem;
+    margin-top: 1.5em;
+    line-height: 3.3rem;
+
+}
+
+.subhead{
+    margin-top: 20px;
+    font-size: 1.4rem;
+}
+.down-arrow{
+    height: 200px;
+    width: 3px;
+    stroke: black;
+    bottom: 0.5em;
+    width: 1em;
+    fill: black;
+    animation:  moveArrow 1s alternate-reverse infinite;
+}
+
+
+
+.card {
+    color:  black;
+    padding: 1rem;
+}
+
+.cards {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+}
+
+.description{
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+
+div.card-Image{
+    width: 80%;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 80px;
+  }
+
+div.container{
+    margin-top: 25px;
+}
+.learn-more{
+    background-color: rgb(93, 93, 239);
+    color: white;
+    border: none;
+    padding: 10px 45px; 
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: 2px solid rgb(73, 43, 219);
+    transition: 0.3s ease-in-out;
+    opacity: 1;
+    border-radius: 5px;
+}
+.learn-more:hover{
+    opacity: 0.6;
+}
+
+@media only screen and (max-width: 700px) {
+
+    .hero{
+        width: 100%;
+    }
+
+    .down-arrow{
+        position: relative;
+        left: 50%;
+        top: 15px;
+        transform: translateX(-50%);
+        stroke: white;
+        fill: white;
+    }
+   
+
+    h1{
+        color: white;
+        text-align: center;
+        font-size: 2rem;
+    }
+    .subhead{
+        color: white;
+        font-size: 1.4em;
+        text-align: center;
+
+    }
+    .logo{
+        color: white;
+    }
+
+    nav{
+        display: none;
+    }
+
+    .hero-img{
+        left: 0;
+        width: 100%;
+        height: 80vh;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-image: url('../images/hero-img-minDisplay.png');
+    }
+
+    section{
+        height: 70vh;
+    }
+
+    
+
+}
+
+
+
+@keyframes moveArrow {
+
+    from {
+        transform: translateY(20px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes introLoad {
+
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes animSpan {
+
+    from{
+        color: black;
+    } 
+    to {
+        color:  rgb(93, 93, 239);
+    }
+    
+}

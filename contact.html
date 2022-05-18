@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/contact.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+        </style>
+       <title>Contact | OpeniA</title>
+</head>
+<body>
+
+
+    <header>
+        <a href="index.html" class="logo">Open<span>iA</span></a>
+
+        <nav>   
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Contact</h1>
+        <p class="subhead">Contact us for more information.</p>    
+    </section>
+
+
+    <div class="container">
+
+        <form action="thanks.php" method="POST">
+            <h3>Get in Touch</h3>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email"  name="email" placeholder="Your Email" required>
+
+            <textarea id="message" rows="6" name='message' placeholder="Your Message" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+
+    </div>
+   
+</body>
+</html>
